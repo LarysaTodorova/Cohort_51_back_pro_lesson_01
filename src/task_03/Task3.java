@@ -1,8 +1,12 @@
-package task_02;
+package task_03;
 
-public class Task2 {
+public class Task3 {
 
-    static int counter = 0;
+    private static int counter = 0;
+
+    public static synchronized void  incrementCounter() {
+        counter++;
+    }
 
 
     public static void main(String[] args) {
@@ -15,7 +19,7 @@ public class Task2 {
 
 
         for (int i = 0; i < 1_000_000; i++) {
-            counter++;
+           incrementCounter();
         }
 
         // Попросить главный поток остановиться в этом месте
